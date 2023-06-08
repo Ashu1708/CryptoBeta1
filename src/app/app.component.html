@@ -1,0 +1,13 @@
+<mat-toolbar>
+    <span><img class="example-spacer1" src="assets/CB_logo.svg"> CryptoBeta</span>
+    <span class="example-spacer"></span>
+    <mat-form-field>
+      <mat-select (selectionChange)="sendCurrency($event.value)" class="text-sm" [(ngModel)]="selectedCurrency">
+        <mat-option *ngFor="let currency of currencyData" [value]="currency.currency_code">
+          {{ currency.country }} ({{ currency.currency_code }})
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+</mat-toolbar>
+  
+<router-outlet></router-outlet> 
